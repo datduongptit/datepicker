@@ -1,70 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap"
+      rel="stylesheet"
+    />
+    <title>jQuery UI Datepicker - Default functionality</title>
+    <link
+      rel="stylesheet"
+      href="fonts/fontawesome-free-5.15.1-web/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="jquery-ui-1.12.1/jquery-ui-1.12.1/jquery-ui.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="jquery-ui-themes-1.12.1/jquery-ui-themes-1.12.1/themes/airbnb/jquery-ui.css"
+    />
+    <link
+      rel="stylesheet"
+      href="jquery-ui-themes-1.12.1/jquery-ui-themes-1.12.1/themes/airbnb/custom.css"
+    />
+    <script src="jquery-ui-1.12.1/jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+    <script src="jquery-ui-1.12.1/ui/datepicker/datepicker2.min.js"></script>
+    <script src="jquery-ui-1.12.1/ui/i18n/datepicker-en-AU.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"
+      integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script id="_otId">
+      let scripts = document.getElementById("_otId");
+      console.log("script", scripts);
+      console.log(moment("30/12/2020").format("DD/MM/YYYY"));
+      var dates = [
+        "30/12/2020",
+        "31/12/2020",
+        "01/01/2021",
+        "03/01/2021",
+        "05/01/2021",
+        "07/01/2021",
+      ];
+      const MOMENT_DATE_FORMATS = [
+        "MM/DD/YY",
+        "YYYY-MM-DD",
+        "DD MMM, YY",
+        "DD MMM, YYYY",
+        "DD MMMM, YY",
+        "DD MMMM, YYYY",
+        "dddd, DD MMMM, YYYY",
+        "dddd, DD. MMMM YYYY",
+        "ddd, MMM DD, YYYY",
+        "dddd, MMM DD, YYYY",
+        "dddd, MMMM DD, YYYY",
+        "ddd, MMMM DD, YYYY",
+        "MMM, ddd DD, YYYY",
+        "MMM, dddd DD, YYYY",
+        "MMMM, dddd DD, YYYY",
+        "MMMM, ddd DD, YYYY",
+      ];
 
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>jQuery UI Datepicker - Default functionality</title>
-	<link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui-1.12.1/jquery-ui.min.css" />
-	<link rel="stylesheet" href="jquery-ui-themes-1.12.1/jquery-ui-themes-1.12.1/themes/base/theme.css" />
-	<script src="jquery-ui-1.12.1/jquery-ui-1.12.1/external/jquery/jquery.js"></script>
-	<script src="jquery-ui-1.12.1/ui/datepicker/datepicker2.min.js"></script>
-	<script src="jquery-ui-1.12.1/ui/i18n/datepicker-vi.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js" integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ==" crossorigin="anonymous"></script>
-	<script id="_otId">
-		let scripts = document.getElementById('_otId')
-		console.log('script', scripts)
-		console.log(moment('30/12/2020').format('DD/MM/YYYY'));
-		var dates = ['30/12/2020', '31/12/2020', '01/01/2021', '03/01/2021','05/01/2021','07/01/2021'];
-		const MOMENT_DATE_FORMATS = [
-			"MM/DD/YY",
-			"YYYY-MM-DD",
-			"DD MMM, YY",
-			"DD MMM, YYYY",
-			"DD MMMM, YY",
-			"DD MMMM, YYYY",
-			"dddd, DD MMMM, YYYY",
-			"dddd, DD. MMMM YYYY",
-			"ddd, MMM DD, YYYY",
-			"dddd, MMM DD, YYYY",
-			"dddd, MMMM DD, YYYY",
-			"ddd, MMMM DD, YYYY",
-			"MMM, ddd DD, YYYY",
-			"MMM, dddd DD, YYYY",
-			"MMMM, dddd DD, YYYY",
-			"MMMM, ddd DD, YYYY"
-		];
+      function DisableDates(date) {
+        console.log(date);
+        // var string = jQuery.datepicker.formatDate('dd/mm/yy', date);
+        let string = moment(date, MOMENT_DATE_FORMATS, "en", true).format(
+          "DD/MM/YYYY"
+        );
+        return [dates.indexOf(string) == -1];
+      }
 
-		function DisableDates(date) {
-			console.log(date)
-			// var string = jQuery.datepicker.formatDate('dd/mm/yy', date);
-			let string = moment(date, MOMENT_DATE_FORMATS, 'en', true).format('DD/MM/YYYY')
-			return [dates.indexOf(string) == -1];
-		}
+      // const maxD  =
+      const options = {
+        showButtonPanel: true,
+        minDate: -20000000,
+        maxDate: new Date("Mon Oct 25 2100 00:00:00 GMT+0700 (Giờ Đông Dương)"),
+        beforeShowDay: DisableDates,
+        numberOfMonths: 1,
+      };
 
-		// const maxD  = 
-		const options = {
-			showButtonPanel: true,
-			minDate: -2,
-			maxDate: new Date("Mon Oct 25 2021 00:00:00 GMT+0700 (Giờ Đông Dương)"),
-			beforeShowDay: DisableDates,
-			numberOfMonths: 1,
-		};
+      $(function () {
+        $("#datepicker").datepicker(options);
+        $("#datepicker").datepicker(datepicker.regional["vi"]);
+        $("#datepicker").datepicker("show");
+        $("#datepicker").datepicker("dialog", "04/01/2021");
+        // $.datepicker.formatDate("DD, MM d, yy", new Date(), {
+        // 	dayNamesShort: $.datepicker.regional["fr"].dayNamesShort,
+        // })
+      });
+    </script>
+  </head>
 
-		$(function () {
-			$('#datepicker').datepicker(options);
-			$('#datepicker').datepicker(datepicker.regional["vi"]);
-			$('#datepicker').datepicker("show");
-			$('#datepicker').datepicker("dialog", "04/01/2021");
-			// $.datepicker.formatDate("DD, MM d, yy", new Date(), {
-			// 	dayNamesShort: $.datepicker.regional["fr"].dayNamesShort,
-			// })
-		});
-	</script>
-</head>
-
-<body>
-	<p>Date: <div><input autocomplete="off" type="text" id="datepicker"></input></div></p>
-</body>
-
+  <body>
+    <p>Date:</p>
+    <div><input autocomplete="off" type="text" id="datepicker" /></div>
+  </body>
 </html>
