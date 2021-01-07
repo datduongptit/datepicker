@@ -3,11 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap"
-      rel="stylesheet"
-    />
     <title>jQuery UI Datepicker - Default functionality</title>
     <link
       rel="stylesheet"
@@ -35,6 +30,7 @@
     ></script>
     <script id="_otId">
       let scripts = document.getElementById("_otId");
+
       console.log("script", scripts);
       console.log(moment("30/12/2020").format("DD/MM/YYYY"));
       var dates = [
@@ -43,7 +39,7 @@
         "01/01/2021",
         "03/01/2021",
         "05/01/2021",
-        "07/01/2021",
+        // "07/01/2021",
       ];
       const MOMENT_DATE_FORMATS = [
         "MM/DD/YY",
@@ -76,10 +72,10 @@
       // const maxD  =
       const options = {
         showButtonPanel: true,
-        minDate: -20000000,
+        minDate: -2,
         maxDate: new Date("Mon Oct 25 2100 00:00:00 GMT+0700 (Giờ Đông Dương)"),
         beforeShowDay: DisableDates,
-        numberOfMonths: 1,
+        numberOfMonths: 2,
       };
 
       $(function () {

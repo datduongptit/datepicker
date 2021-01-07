@@ -1,7 +1,8 @@
 #ui-datepicker-div {
   width: 306px;
-  /* height: 330px; */
+  height: auto;
   border-radius: 8px;
+  margin-top: 3px;
 }
 
 /* Header */
@@ -83,9 +84,9 @@ table.ui-datepicker-calendar tbody tr td a {
 .ui-datepicker-buttonpane {
   display: none;
 }
-/* table.ui-datepicker-calendar tbody tr td a.ui-state-hover:hover {
-    width: 100%;
-  } */
+table.ui-datepicker-calendar {
+  margin: auto;
+}
 
 /* Interaction states
   ----------------------------------*/
@@ -305,10 +306,27 @@ a.ui-button:active,
 
 /* Responsive */
 @media only screen and (max-width: 675px) {
+  #ui-datepicker-div {
+    width: 291px !important;
+    border-radius: none;
+    overflow: hidden;
+    border-top: none !important;
+  }
   .ui-datepicker-group-first {
     float: none !important;
+    border-left: none;
   }
   .ui-datepicker-group-last {
     float: none !important;
+  }
+  .ui-datepicker-group-last table tbody {
+    border-left: none;
+  }
+
+  .ui-datepicker-group-last .ui-datepicker-header {
+    border-top-left-radius: inherit;
+  }
+  .ui-datepicker-multi-2 .ui-datepicker-group {
+    width: 100%;
   }
 }

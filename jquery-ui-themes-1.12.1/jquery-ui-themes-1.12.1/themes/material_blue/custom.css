@@ -1,5 +1,5 @@
 #ui-datepicker-div {
-  width: 306px;
+  width: 320px;
   /* height: 330px; */
   border-radius: 8px;
   /* overflow: hidden; */
@@ -23,6 +23,7 @@
 
 .ui-datepicker-multi .ui-datepicker-group table {
   width: 100%;
+  margin: auto;
 }
 
 /* Header */
@@ -371,8 +372,15 @@ a.ui-button:active,
 
 /* Responsive */
 @media only screen and (max-width: 675px) {
+  #ui-datepicker-div {
+    width: 291px !important;
+    border-radius: none;
+    overflow: hidden;
+    border-top: none !important;
+  }
   .ui-datepicker-group-first {
     float: none !important;
+    border-left: none;
   }
   .ui-datepicker-group-last {
     float: none !important;
@@ -381,7 +389,11 @@ a.ui-button:active,
     border-right: 1px solid #ccc;
     border-left: none;
   }
+
   .ui-datepicker-group-last .ui-datepicker-header {
     border-top-left-radius: inherit;
+  }
+  .ui-datepicker-multi-2 .ui-datepicker-group {
+    width: 100%;
   }
 }
