@@ -1,4 +1,4 @@
-#ui-datepicker-div {
+.ui-datepicker-inline {
   width: 320px;
   /* height: 330px; */
   border-radius: 8px;
@@ -8,7 +8,7 @@
   border: none;
 }
 
-#ui-datepicker-div::before {
+.ui-datepicker-inline::before {
   content: "";
   position: absolute;
   display: block;
@@ -314,10 +314,16 @@ a.ui-button:active,
   background-image: none !important;
 }
 
+.ui-state-hover.ui-datepicker-next-hover,
+.ui-state-hover.ui-datepicker-prev-hover {
+  background: #42a5f5;
+  cursor: pointer;
+}
+
 .ui-datepicker-prev:before,
 .ui-datepicker-next:before {
-  font-family: "Font Awesome 5 Free";
   position: absolute;
+  color: #fff;
   top: 0;
   right: 0;
   bottom: 0;
@@ -329,20 +335,20 @@ a.ui-button:active,
   justify-content: center;
 }
 
-.ui-state-hover.ui-datepicker-next-hover,
-.ui-state-hover.ui-datepicker-prev-hover {
-  background: #42a5f5;
-  cursor: pointer;
-}
-
 .ui-datepicker-prev:before {
-  content: "\f104";
-  color: #fff;
+  content: url("../../../../fonts/images/angle-left-solid.svg");
+  left: 2px;
+  width: 40%;
+  height: 123%;
+  filter: invert();
 }
 
 .ui-datepicker-next:before {
-  content: "\f105";
-  color: #fff;
+  content: url("../../../../fonts/images/angle-right-solid.svg");
+  left: 4px;
+  width: 40%;
+  height: 123%;
+  filter: invert();
 }
 
 .ui-datepicker-multi.ui-datepicker-multi-2 {
@@ -372,7 +378,7 @@ a.ui-button:active,
 
 /* Responsive */
 @media only screen and (max-width: 675px) {
-  #ui-datepicker-div {
+  .ui-datepicker-inline {
     width: 291px !important;
     border-radius: none;
     overflow: hidden;
