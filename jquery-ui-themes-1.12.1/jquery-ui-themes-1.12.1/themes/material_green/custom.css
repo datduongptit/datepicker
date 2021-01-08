@@ -27,6 +27,7 @@
 
 .ui-datepicker-multi .ui-datepicker-group table {
   width: 100%;
+  margin: auto;
 }
 
 /* Header */
@@ -319,7 +320,7 @@ a.ui-button:active,
 
 .ui-datepicker-prev:before,
 .ui-datepicker-next:before {
-  font-family: "Font Awesome 5 Free";
+  /* font-family: "Font Awesome 5 Free"; */
   position: absolute;
   top: 0;
   right: 0;
@@ -339,12 +340,12 @@ a.ui-button:active,
 }
 
 .ui-datepicker-prev:before {
-  content: "\f104";
+  content: "<";
   color: #fff;
 }
 
 .ui-datepicker-next:before {
-  content: "\f105";
+  content: ">";
   color: #fff;
 }
 
