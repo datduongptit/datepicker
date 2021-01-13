@@ -6,6 +6,27 @@
   margin-top: 3px;
 }
 
+#ui-datepicker-div {
+  width: 320px;
+  /* height: 330px; */
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 3px;
+}
+
+#ui-datepicker-div::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 10px solid #fff;
+  top: -6px;
+  left: 8px;
+}
+
 .ui-datepicker-inline::before {
   content: "";
   position: absolute;

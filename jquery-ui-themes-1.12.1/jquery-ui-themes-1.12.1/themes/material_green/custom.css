@@ -8,8 +8,31 @@
   border: none;
 }
 
+#ui-datepicker-div {
+  width: 320px;
+  /* height: 330px; */
+  border-radius: 8px;
+  /* overflow: hidden; */
+  padding: 0;
+  top: 74px !important;
+  border: none;
+}
+
 .ui-datepicker-unselectable {
   line-height: 34px !important;
+}
+
+#ui-datepicker-div::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 10px solid #1bbc9b;
+  top: -8px;
+  left: 8px;
 }
 
 .ui-datepicker-inline::before {
@@ -382,6 +405,12 @@ a.ui-button:active,
 /* Responsive */
 @media only screen and (max-width: 675px) {
   .ui-datepicker-inline {
+    width: 291px !important;
+    border-radius: none;
+    overflow: hidden;
+    border-top: none !important;
+  }
+  #ui-datepicker-div {
     width: 291px !important;
     border-radius: none;
     overflow: hidden;

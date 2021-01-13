@@ -8,6 +8,16 @@
   border: none;
 }
 
+#ui-datepicker-div {
+  width: 320px;
+  /* height: 330px; */
+  border-radius: 8px;
+  /* overflow: hidden; */
+  padding: 0;
+  top: 74px !important;
+  border: none;
+}
+
 .ui-datepicker-inline::before {
   content: "";
   position: absolute;
@@ -379,6 +389,12 @@ a.ui-button:active,
 /* Responsive */
 @media only screen and (max-width: 675px) {
   .ui-datepicker-inline {
+    width: 291px !important;
+    border-radius: none;
+    overflow: hidden;
+    border-top: none !important;
+  }
+  #ui-datepicker-div {
     width: 291px !important;
     border-radius: none;
     overflow: hidden;

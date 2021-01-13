@@ -338,6 +338,12 @@ a.ui-button:active,
     overflow: hidden;
     border-top: none !important;
   }
+  #ui-datepicker-div {
+    width: 291px !important;
+    border-radius: none;
+    overflow: hidden;
+    border-top: none !important;
+  }
   .ui-datepicker-group-first {
     float: none !important;
     border-left: none;
